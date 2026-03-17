@@ -1,0 +1,39 @@
+{
+  "entertainment_news": [
+    {
+      "title": "अस्करपछि बर्गरको चर्चा",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/sdfsdfsdfsdf-1732026091116-1000x0.png&w=701&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    },
+    {
+      "title": "२१ दिनमा सकियो ‘कार्की साइँला’को छायांकन",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/-1732026083750-1000x0.png&w=701&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    },
+    {
+      "title": "‘हामी तीन भाइ’को ट्रेलर सार्वजनिक",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/screenshot-2026-03-16-153802-1732026083124-1000x0.jpg&w=701&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    },
+    {
+      "title": "‘वान ब्याटल आफ्टर एनोदर’ले उठाएको आप्रवासी मुद्दा",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/oba-2-1632026032828-1000x0.jpg&w=701&h=0",
+      "category": "मनोरञ्जन",
+      "author": "रीना मोक्तान"
+    },
+    {
+      "title": "सुरु भयो ‘पाँच पाण्डव’को छायांकन",
+      "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2026/third-party/whatsapp-image-2026-03-16-at-131901-1632026012137-1000x0.jpg&w=701&h=0",
+      "category": "मनोरञ्जन",
+      "author": "कान्तिपुर संवाददाता"
+    }
+  ],
+  "cartoon_of_the_day": {
+    "title": "गजब छ बा!",
+    "image_url": "https://assets-cdn-api.ekantipur.com/thumb.php?src=https://assets-cdn.ekantipur.com/uploads/source/news/kantipur/2022/third-party/gajab-chha-ba-821203-copy-1732026024923-1000x0.jpg&w=601&h=0",
+    "author": "अविन"
+  }
+}

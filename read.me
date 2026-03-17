@@ -1,0 +1,60 @@
+# Ekantipur Scraper (Playwright + Python)
+
+A Python scraper that extracts:
+- Top 5 entertainment news from Ekantipur
+- Cartoon of the Day section
+
+---
+
+## Setup & Run (uv)
+
+1) Install dependencies
+   uv sync
+
+2) Install Playwright browser (Chromium)
+   uv run playwright install chromium
+
+3) Run scraper
+   uv run python scraper.py
+
+---
+
+## Output
+
+The script generates `output.json`:
+
+{
+  "entertainment_news": [
+    {
+      "title": "...",
+      "image_url": "...",
+      "category": "मनोरञ्जन",
+      "author": "..."
+    }
+  ],
+  "cartoon_of_the_day": {
+    "title": "...",
+    "image_url": "...",
+    "author": "..."
+  }
+}
+
+---
+
+## Approach
+
+- Used Playwright (sync API) for dynamic content handling
+- Selected article cards using stable class selectors
+- Avoided brittle selectors like nth-child
+- Extracted top 5 valid articles using safe checks
+- Handled missing author fields safely
+- Normalized image URLs from multiple attributes (src, data-src, srcset)
+- Extracted cartoon separately and split title/author when needed
+
+---
+
+## Notes
+
+- Uses UTF-8 JSON (`ensure_ascii=False`) for Nepali text
+- Includes fallback navigation to the entertainment page
+- Uses `.first` and scoped locators to avoid strict mode errors

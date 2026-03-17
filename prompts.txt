@@ -1,0 +1,122 @@
+Project Setup and Prompts Used Throughout the Project:
+
+1. Setup:
+   pip install uv
+   mkdir ekantipur_scraper && cd ekantipur_scraper
+   uv init
+   uv add playwright
+   uv run playwright install chromium
+
+2. Goal:
+   Create a Python 3.11+ Playwright script using uv that scrapes https://ekantipur.com and saves valid JSON to output.json.
+
+   Required tasks:
+   1. Go to the Entertainment section (मनो रञ्जन)
+   2. Extract the top 5 news articles with:
+      - title
+      - image_url
+      - category
+      - author (null if missing)
+   3. Extract the "Cartoon of the Day" / "व्यंग्यचित्र" section with:
+      - title
+      - image_url
+      - author
+
+   Required output structure:
+   {
+     "entertainment_news": [
+       {
+         "title": "...",
+         "image_url": "...",
+         "category": "...",
+         "author": "..."
+       }
+     ],
+     "cartoon_of_the_day": {
+       "title": "...",
+       "image_url": "...",
+       "author": "..."
+     }
+   }
+
+   Technical requirements:
+   - Use Python sync Playwright
+   - Use robust selectors and stable attributes
+   - Avoid fragile XPaths unless necessary
+   - Handle missing elements safely
+   - Wait properly for dynamic content
+   - Write clean, readable code with meaningful comments
+   - Use ensure_ascii=False when writing JSON
+   - Keep code modular with helper functions
+
+   Working approach:
+   - Do NOT generate the entire solution at once
+   - First generate a clean scraper.py skeleton with:
+     - main()
+     - browser setup
+     - navigation placeholder
+     - helper functions
+     - JSON writing
+   - Then manually inspect selectors in DevTools
+   - Then iteratively complete extraction logic
+
+   Expected project files:
+   - scraper.py
+   - output.json
+   - pyproject.toml
+
+3. Selector Identification Prompt:
+
+   I inspected the website and found these selectors:
+
+   Entertainment link:
+   body > header > div > div.bottom-nav > div.bottom-nav-inside-wrapper > div > a:nth-child(5)
+
+   Entertainment article cards (initial attempt):
+   body > div.category-main-wrapper > div
+
+   Inside each article card:
+   - title: .category-description h2 a
+   - author: .category-description .author-name
+   - summary: .category-description p
+   - image: .category-image img
+   - category: not present, use "मनोरञ्जन"
+
+   Cartoon section:
+   body > header > div > div.logo > div.category-name > p > a
+
+   Inside cartoon:
+   - title and author: .cartoon-description p
+   - image: .cartoon-image img
+   - date: .date p
+
+   Task:
+   - Navigate to entertainment section
+   - Extract top 5 entertainment articles
+   - Extract cartoon of the day
+   - Handle missing author safely
+   - Normalize image URLs
+   - Save JSON output
+
+4. Debugging Prompt:
+
+   My Playwright scraper is not extracting correctly.
+
+   Observed issue:
+   playwright._impl._errors.Error: Locator.wait_for: Error: strict mode violation: locator("body > div.category-main-wrapper > div").first.locator(".category-description h2 a") resolved to 30 elements
+
+   Tasks:
+   - Identify the exact cause
+   - Provide smallest fix
+   - Explain why selector failed
+   - Return only corrected code block
+
+5. Manual Fix:
+   - Adjusted entertainment news extraction limit from 3 to 5
+   - Refined selectors to avoid strict mode issues
+
+6. Additional AI Usage:
+   - Used ChatGPT for:
+     - Project planning
+     - Selector refinement
+     -Project Cleanup
